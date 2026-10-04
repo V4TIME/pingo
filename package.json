@@ -1,11 +1,11 @@
 {
   "name": "v4bot",
   "version": "1.0.0",
-  "description": "V4 Bot - Responds to hi with hi",
-  "main": "src/v4bot.js",
+  "description": "Discord bot that responds to hi with hi",
+  "main": "discord-bot.js",
   "type": "module",
   "scripts": {
-    "start": "node src/v4bot.js",
+    "start": "node discord-bot.js",
     "deploy": "node src/deploy-commands.js"
   },
   "dependencies": {
