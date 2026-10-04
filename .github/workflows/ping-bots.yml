@@ -1,0 +1,22 @@
+name: Ping Discord Bots
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'  # Every minute
+  workflow_dispatch:
+
+jobs:
+  ping-bots:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Discord Bot 1
+        run: |
+          curl -s -X GET "https://discord.com/api/gateway/bot" -H "Authorization: Bot ${BOT_TOKEN_1}" || echo "Bot 1 ping failed"
+        env:
+          BOT_TOKEN_1: ${{ secrets.BOT_TOKEN_1 }}
+          
+      - name: Ping Discord Bot 2
+        run: |
+          curl -s -X GET "https://discord.com/api/gateway/bot" -H "Authorization: Bot ${BOT_TOKEN_2}" || echo "Bot 2 ping failed"
+        env:
+          BOT_TOKEN_2: ${{ secrets.BOT_TOKEN_2 }}
